@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-deployment
+  labels:
+   tipo: pod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tipo: pod
+  template:
+    metadata:
+      labels:
+       tipo: pod
+    spec:
+      containers:
+      - name: web
+        image: node_hostname
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000

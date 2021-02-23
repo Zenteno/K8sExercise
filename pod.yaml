@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mi-pod-node
+  labels:
+    tipo: pod
+spec:
+  containers:
+    - name: node
+      image: mi_app_prueba_node
+      imagePullPolicy: Never
+      ports:
+        - name: web
+          containerPort: 3000
+          protocol: TCP
